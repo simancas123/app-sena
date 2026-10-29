@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <style>
+    @font-face {
+      font-family: "Cormorant Garamond";
+      src: url("fonts/CormorantGaramond-SemiBold.ttf") format("truetype");
+      font-weight: 600;
+      font-style: normal;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background: #F3EDE3;
+    }
+    .card {
+      position: relative;
+      width: 1200px;
+      height: 630px;
+      background: #F3EDE3;
+      overflow: hidden;
+    }
+    svg.map { position: absolute; inset: 0; width: 1200px; height: 630px; }
+    .wash {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 780px;
+      height: 420px;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(ellipse at center, #F3EDE3 0%, #F3EDE3 46%, rgba(243,237,227,0) 74%);
+      pointer-events: none;
+    }
+    .lockup {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .mark { width: 72px; height: 72px; margin-bottom: 6px; }
+    h1 {
+      font-family: "Cormorant Garamond", "Liberation Serif", serif;
+      font-weight: 600;
+      font-size: 232px;
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      color: #1A2332;
+      white-space: nowrap;
+    }
+    .rule {
+      width: 148px;
+      height: 1px;
+      background: #B8883D;
+      margin: 22px 0 16px;
+    }
+    p {
+      font-family: "Liberation Sans", "DejaVu Sans", sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: #C4563A;
+      padding-left: 0.38em;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <svg class="map" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="630" fill="#F3EDE3"/>
+      <!-- sea -->
+      <path d="M0 468 C160 430 250 510 400 478 C540 448 610 530 780 500 C940 472 1040 540 1200 490 L1200 630 L0 630 Z" fill="#E7D7B4"/>
+      <path d="M0 468 C160 430 250 510 400 478 C540 448 610 530 780 500 C940 472 1040 540 1200 490" fill="none" stroke="#1A2332" stroke-width="1.4" opacity="0.55"/>
+      <path d="M40 520 C200 490 320 560 480 530 C620 504 700 570 860 548 C1000 528 1100 575 1180 552" fill="none" stroke="#B8883D" stroke-width="0.8" opacity="0.7"/>
+
+      <!-- old town blocks, left -->
+      <g fill="#E9E0D2" stroke="#1A2332" stroke-width="1.15" opacity="0.9">
+        <path d="M92 118 h78 v46 h-78 z"/>
+        <path d="M182 108 h92 v62 h-36 v-22 h-56 z"/>
+        <path d="M108 178 h64 v52 h-64 z"/>
+        <path d="M184 186 h70 v40 h-70 z"/>
+        <path d="M96 246 h54 v38 h-54 z"/>
+        <path d="M162 242 h96 v58 h-40 v-20 h-56 z"/>
+      </g>
+      <g fill="none" stroke="#1A2332" stroke-width="0.7" opacity="0.35">
+        <path d="M78 100 v210"/>
+        <path d="M268 96 v220"/>
+        <path d="M70 164 h210"/>
+        <path d="M70 232 h210"/>
+      </g>
+
+      <!-- right quarter -->
+      <g fill="#E9E0D2" stroke="#1A2332" stroke-width="1.15">
+        <path d="M930 96 h86 v40 h-86 z"/>
+        <path d="M1028 88 h88 v54 h-34 v-18 h-54 z"/>
+        <path d="M944 150 h70 v48 h-70 z"/>
+        <path d="M1026 156 h78 v36 h-78 z"/>
+        <path d="M960 214 h110 v44 h-46 v-16 h-64 z"/>
+      </g>
+      <g fill="none" stroke="#1A2332" stroke-width="0.7" opacity="0.35">
+        <path d="M916 78 v200"/>
+        <path d="M1118 78 v200"/>
+        <path d="M910 142 h220"/>
+        <path d="M910 208 h220"/>
+      </g>
+
+      <!-- a quiet avenue crossing the lower land -->
+      <path d="M300 400 C 460 372, 620 418, 900 386" fill="none" stroke="#1A2332" stroke-width="1.1" opacity="0.4"/>
+      <path d="M340 430 C 500 404, 680 448, 940 412" fill="none" stroke="#B8883D" stroke-width="0.8" opacity="0.85"/>
+
+      <!-- hotel pin -->
+      <g transform="translate(248 300)">
+        <path d="M0 0 C 10 -2 16 8 12 18 C 8 28 0 36 0 36 C 0 36 -8 28 -12 18 C -16 8 -10 -2 0 0 Z" fill="#C4563A"/>
+        <circle cy="14" r="4.2" fill="#F3EDE3"/>
+      </g>
+      <!-- restaurant pin -->
+      <g transform="translate(968 268)">
+        <path d="M0 0 C 10 -2 16 8 12 18 C 8 28 0 36 0 36 C 0 36 -8 28 -12 18 C -16 8 -10 -2 0 0 Z" fill="#C4563A"/>
+        <circle cy="14" r="4.2" fill="#B8883D"/>
+      </g>
+
+      <!-- frame -->
+      <rect x="28" y="28" width="1144" height="574" fill="none" stroke="#B8883D" stroke-width="1.25"/>
+      <rect x="36" y="36" width="1128" height="558" fill="none" stroke="#1A2332" stroke-width="0.6" opacity="0.45"/>
+
+      <!-- corner ticks -->
+      <g stroke="#1A2332" stroke-width="1" opacity="0.55">
+        <path d="M56 56 h16 M56 56 v16"/>
+        <path d="M1144 56 h-16 M1144 56 v16"/>
+        <path d="M56 574 h16 M56 574 v-16"/>
+        <path d="M1144 574 h-16 M1144 574 v-16"/>
+      </g>
+    </svg>
+
+    <div class="wash"></div>
+
+    <div class="lockup">
+      <svg class="mark" viewBox="0 0 72 72" aria-hidden="true">
+        <circle cx="36" cy="36" r="28" fill="none" stroke="#B8883D" stroke-width="1.4"/>
+        <circle cx="36" cy="36" r="22" fill="none" stroke="#1A2332" stroke-width="0.6" opacity="0.45"/>
+        <path d="M36 10 L42.2 36 L36 31.2 L29.8 36 Z" fill="#C4563A"/>
+        <path d="M36 62 L29.8 36 L36 40.8 L42.2 36 Z" fill="#1A2332"/>
+        <path d="M10 36 L36 29.8 L31.2 36 L36 42.2 Z" fill="#B8883D"/>
+        <path d="M62 36 L36 42.2 L40.8 36 L36 29.8 Z" fill="#B8883D" opacity="0.85"/>
+        <circle cx="36" cy="36" r="3.1" fill="#B8883D"/>
+      </svg>
+      <h1>Brújula</h1>
+      <div class="rule"></div>
+      <p>Hotels & restaurants</p>
+    </div>
+  </div>
+</body>
+</html>

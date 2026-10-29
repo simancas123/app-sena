@@ -1,0 +1,149 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --color-paper: FFFFFF;
+  --color-paper-2: #0d479c;
+  --color-card: #FFFFFF;
+  --color-line: #000000;
+  --color-ink: #0d479c;
+  --color-ink-soft: #ff3131;
+  --color-muted: #000000;
+  --color-terra: #ff2828;
+  --color-terra-deep: #00bf63;
+  --color-gold: #a67932;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    overflow: hidden;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* Leaflet tiles break if Tailwind's img { max-width: 100% } leaks in. */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  background: var(--color-paper-2);
+  font-family: var(--font-sans);
+}
+
+.leaflet-container img,
+.leaflet-container canvas {
+  max-width: none !important;
+  max-height: none !important;
+}
+
+.leaflet-control-attribution {
+  background: rgb(255 250 243 / 88%) !important;
+  color: var(--color-muted) !important;
+  font-size: 10px !important;
+  max-width: 70%;
+}
+
+.pin-wrap {
+  background: transparent !important;
+  border: none !important;
+}
+
+.pin {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border: 2px solid var(--color-card);
+  border-radius: 999px;
+  background: var(--color-ink);
+  color: var(--color-card);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: 0 6px 14px rgb(26 35 50 / 28%);
+}
+
+.pin-hotel {
+  background: var(--color-ink);
+}
+
+.pin-restaurant {
+  background: var(--color-terra);
+}
+
+.pin-cafe {
+  background: var(--color-gold);
+}
+
+.pin-bar {
+  background: var(--color-ink-soft);
+}
+
+.pin-itinerary {
+  background: var(--color-terra-deep);
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.pin.is-on {
+  transform: scale(1.16);
+  box-shadow:
+    0 0 0 3px var(--color-ink),
+    0 8px 16px rgb(26 35 50 / 32%);
+}
+
+.map-controls {
+  position: absolute;
+  z-index: 1100;
+  right: 0.75rem;
+  bottom: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.scroll-row {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.scroll-row::-webkit-scrollbar {
+  display: none;
+}

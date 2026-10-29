@@ -1,0 +1,40 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Brújula — hoteles y restaurantes",
+      "hasCanvas": false,
+      "bodyTextLen": 1694,
+      "bodyTextHash": "2a60a2c0751cdd8433a653ec91d573f0d13c641df2de5b0aa9032abae7cdde19",
+      "bodyTextPrefix": "+ − H hotel · R restaurante · C café · B bar Brújula Hoteles y r",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Brújula — hoteles y restaurantes",
+      "hasCanvas": false,
+      "bodyTextLen": 1694,
+      "bodyTextHash": "2a60a2c0751cdd8433a653ec91d573f0d13c641df2de5b0aa9032abae7cdde19",
+      "bodyTextPrefix": "+ − H hotel · R restaurante · C café · B bar Brújula Hoteles y r",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": true,
+  "baselineReasons": [
+    "mobile: body text changed (1888 -> 1694 chars, hash mismatch)"
+  ]
+}
